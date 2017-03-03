@@ -4,8 +4,7 @@
 
     class TitleCaseGeneratorTest extends PHPUnit_Framework_TestCase  {    // Class declaration, extends means it's a special test class
 
-        function test_makeTitleCase_oneWord()  // method to run 1st test
-        {
+        function test_makeTitleCase_oneWord()  {
             //Arrange
             $test_TitleCaseGenerator = new TitleCaseGenerator;
             $input = "beowulf";
@@ -17,17 +16,28 @@
             $this->assertEquals("Beowulf", $result);
         }
 
-        function test_makeTitleCase_multipleWords()
-        {
+        function test_makeTitleCase_multipleWords() {
             //Arrange
             $test_TitleCaseGenerator = new TitleCaseGenerator;
-            $input = "the little mermaid";
+            $input = "when harry met sally";
 
             //Act
             $result = $test_TitleCaseGenerator->makeTitleCase($input);
 
             //Assert
-            $this->assertEquals("The Little Mermaid", $result);
+            $this->assertEquals("When Harry Met Sally", $result);
+        }
+
+        function test_makeTitleCase_notCapitalized() {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "lord of the rings";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("Lord of the Rings", $result);
         }
     }
 
