@@ -39,6 +39,18 @@
             //Assert
             $this->assertEquals("Lord of the Rings", $result);
         }
+
+        function test_makeTitleCase_firstWordCapitalized() {
+            //Arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "the little mermaid";
+
+            //Act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //Assert
+            $this->assertEquals("The Little Mermaid", $result);
+        }
     }
 
 ?>
